@@ -9,7 +9,7 @@ function UserComponent() {
             if (!res.ok) {
                 throw new Error(`HTTP error! status: ${res.status}`);
             }
-            console.log("Fetched users:", res.body);
+            console.log("Fetched users:", res);
 
         } catch (err) {
             console.error("Error fetching users:", err);
