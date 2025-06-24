@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function UserComponent() {
-    const [user, setUser] = useState([]);
+
 
     const fetchUser = async () => {
         try {
@@ -9,10 +9,8 @@ function UserComponent() {
             if (!res.ok) {
                 throw new Error(`HTTP error! status: ${res.status}`);
             }
+            console.log("Fetched users:", res.body);
 
-            const data = await res.json(); // 👈 parse JSON
-            console.log("Fetched users:", data);
-            setUser(data); // 👈 store in state
         } catch (err) {
             console.error("Error fetching users:", err);
         }
@@ -26,7 +24,7 @@ function UserComponent() {
         <div>
             <h2>User List</h2>
             <ul>
-               working fine
+                Works
             </ul>
         </div>
     );
